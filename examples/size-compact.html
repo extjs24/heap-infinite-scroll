@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Heap Infinite Scroll</title>
+
+        <!-- Styles -->
+        <link href="css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link href="css/heap-infinite-scroll.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="css/style.css" media="screen" rel="stylesheet" type="text/css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Scripts -->
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="js/jquery.heap-infinite-scroll-1.0.1.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="page-header">
+                <h3>Heap Infinite Scroll</h3>
+                <p>An example of a scroll with different parameter values <span style="color: #bd4c12">size</span> and <span style="color: #bd4c12">compact</span></p>
+            </div>
+
+            <div class="row">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input id="search-word" type="text" class="form-control" placeholder="Search" value="space">
+                    </div>
+                    <button id="search-button"  class="btn btn-default" onClick="return false;">
+                        Submit
+                    </button>
+                </form>
+            </div>
+
+            <div class="panel panel-default scroll-panel">
+                <div class="size-compact panel-body">
+                    <div class="params row">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">size: 'proportional'<br>compact: true</div>
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">size: 'proportional'<br>compact: false</div>
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">size: 'square'<br>compact: true</div>
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">size: 'square'<br>compact: false</div>
+                    </div>
+                    <div class="row">
+                        <div class="proportional-compact-panel col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+                        <div class="proportional-uncompact-panel col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+                        <div class="square-compact-panel col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+                        <div class="square-uncompact-panel col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#code"><span class="caret"></span> Code</button>
+            <pre id="code" class=" collapse">
+                jQuery(function() {
+
+                    var search1 = new HeapGoogleSearch(),
+                        search2 = new HeapGoogleSearch(),
+                        search3 = new HeapGoogleSearch(),
+                        search4 = new HeapGoogleSearch(),
+                        btnClick = function() {
+                            var val = $('#search-word').val();
+
+                            search1.setQuery(val);
+                            search2.setQuery(val);
+                            search3.setQuery(val);
+                            search4.setQuery(val);
+
+                            scroll1.load();
+                            scroll2.load();
+                            scroll3.load();
+                            scroll4.load();
+                        },
+                        scroll1 = new HeapInfiniteScroll('.proportional-compact-panel', {
+                            margin: 10,
+                            height: 80,
+                            frameWidth: 0,
+                            downloadIcon: '&lt;i class="fa fa-refresh fa-spin"&gt;&lt;/i&gt;',
+                            url: search1
+                        }),
+                        scroll2 = new HeapInfiniteScroll('.proportional-uncompact-panel', {
+                            margin: 10,
+                            height: 80,
+                            frameWidth: 0,
+                            compact: false,
+                            downloadIcon: '&lt;i class="fa fa-cog fa-spin"&gt;&lt;/i&gt;',
+                            url: search2
+                        }),
+                        scroll3 = new HeapInfiniteScroll('.square-compact-panel', {
+                            margin: 10,
+                            height: 80,
+                            frameWidth: 0,
+                            size: 'square',
+                            downloadIcon: '&lt;i class="fa fa-spinner fa-spin"&gt;&lt;/i&gt;',
+                            url: search3
+                        }),
+                        scroll4 = new HeapInfiniteScroll('.square-uncompact-panel', {
+                            margin: 10,
+                            height: 80,
+                            frameWidth: 0,
+                            size: 'square',
+                            compact: false,
+                            downloadIcon: '&lt;i class="fa fa-circle-o-notch fa-spin"&gt;&lt;/i&gt;',
+                            url: search4
+                        });
+
+                    $('#search-button').click(btnClick);
+
+                    setTimeout(function() {
+                        btnClick();
+                    }, 1000);
+                });
+            </pre>
+
+            <br>
+            <br>
+
+            <footer>
+                <p>© Vladimir Neginskiy 2015</p>
+            </footer>
+        </div>
+
+        <script type="text/javascript">
+            //<!--
+
+            jQuery(function() {
+
+                var search1 = new HeapGoogleSearch(),
+                    search2 = new HeapGoogleSearch(),
+                    search3 = new HeapGoogleSearch(),
+                    search4 = new HeapGoogleSearch(),
+                    btnClick = function() {
+                        var val = $('#search-word').val();
+
+                        search1.setQuery(val);
+                        search2.setQuery(val);
+                        search3.setQuery(val);
+                        search4.setQuery(val);
+
+                        scroll1.load();
+                        scroll2.load();
+                        scroll3.load();
+                        scroll4.load();
+                    },
+                    scroll1 = new HeapInfiniteScroll('.proportional-compact-panel', {
+                        margin: 10,
+                        height: 80,
+                        frameWidth: 0,
+                        downloadIcon: '<i class="fa fa-refresh fa-spin"></i>',
+                        url: search1
+                    }),
+                    scroll2 = new HeapInfiniteScroll('.proportional-uncompact-panel', {
+                        margin: 10,
+                        height: 80,
+                        frameWidth: 0,
+                        compact: false,
+                        downloadIcon: '<i class="fa fa-cog fa-spin"></i>',
+                        url: search2
+                    }),
+                    scroll3 = new HeapInfiniteScroll('.square-compact-panel', {
+                        margin: 10,
+                        height: 80,
+                        frameWidth: 0,
+                        size: 'square',
+                        downloadIcon: '<i class="fa fa-spinner fa-spin"></i>',
+                        url: search3
+                    }),
+                    scroll4 = new HeapInfiniteScroll('.square-uncompact-panel', {
+                        margin: 10,
+                        height: 80,
+                        frameWidth: 0,
+                        size: 'square',
+                        compact: false,
+                        downloadIcon: '<i class="fa fa-circle-o-notch fa-spin"></i>',
+                        url: search4
+                    });
+
+                $('#search-button').click(btnClick);
+
+                setTimeout(function() {
+                    btnClick();
+                }, 1000);
+            });
+
+            //-->
+        </script>
+
+    </body>
+</html>

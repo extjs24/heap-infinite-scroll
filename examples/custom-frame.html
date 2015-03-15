@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Heap Infinite Scroll</title>
+
+        <!-- Styles -->
+        <link href="/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link href="/css/heap-infinite-scroll.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/css/style.css" media="screen" rel="stylesheet" type="text/css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Scripts -->
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="js/jquery.heap-infinite-scroll-1.0.1.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="page-header">
+                <h3>Heap Infinite Scroll</h3>
+                <p>Example custom description</p>
+            </div>
+
+            <div class="row">
+                <ul class="nav nav-pills">
+                    <li class="dropdown">
+                        <a id="drop1" role="button" data-toggle="dropdown" href="#">Cars <b class="caret"></b></a>
+                        <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" >Passenger car</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" >Truck</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" >Bus</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a id="drop2" role="button" data-toggle="dropdown" href="#">Buildings <b class="caret"></b></a>
+                        <ul id="menu2" class="dropdown-menu" role="menu" aria-labelledby="drop2">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" >Skyscraper</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" >Penthhouse</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" >Tower block</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" >Block of flats</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" >High-rise building</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" >Multi-storey building</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" >Low-rise building</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" >Detached house</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" >Terraced house</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" >Bungalow</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" >Castle</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" >Mansion</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" >Maisonette</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" >Villa</a></li>
+                        </ul>
+                    </li>
+                    <p id="search-value" class="navbar-text pull-right">Merchandise</p>
+                </ul>
+
+            </div>
+
+            <div class="panel panel-default scroll-panel">
+                <div class="custom-description panel-body">
+                    <div class="row">
+                        <div class="custom-description-panel col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#code"><span class="caret"></span> Code</button>
+            <pre id="code" class=" collapse">
+                jQuery(function() {
+
+                    var search = new HeapGoogleSearch(),
+                        callback = function(itm) {
+                            return {
+                                description: '&lt;div class="custom-content"&gt;&lt;a href="' + itm.url + '" target="_blank"&gt;' +
+                                    itm.visibleUrl + '&lt;/a&gt;&lt;br&gt;' + itm.content + '&lt;/div&gt;'
+                            };
+                        },
+                        scroll = new HeapInfiniteScroll('.custom-description-panel', {
+                            margin: 50,
+                            height: 150,
+                            frameWidth: 20,
+                            downloadIcon: '&lt;i class="fa fa-refresh fa-spin"&gt;&lt;/i&gt;',
+                            url: search,
+                            oncallback: callback,
+                            onframeshow: function (content) {
+                                var thumb = content.closest('.thumb'),
+                                    palet = content.closest('.scroll-pallet'),
+                                    custom = content.children('.custom-content');
+
+                                if (content.offset().top + 20 + custom.outerHeight() > palet.offset().top + palet.height()) {
+                                    custom.css({
+                                        top: - (thumb.height() + custom.outerHeight() + 20) + 'px',
+                                        width: content.width() + 'px'
+                                    })
+                                } else {
+                                    custom.css({
+                                        top: '20px',
+                                        width: content.width() + 'px'
+                                    })
+                                }
+                            }
+                        });
+
+                    $('a[role="menuitem"]').click(function() {
+                        var val = $(this).html();
+
+                        $('#search-value').text(val);
+                        search.setQuery('"' + val + '"');
+
+                        scroll.load();
+                    });
+
+                    setTimeout(function() {
+                        search.setQuery($('#search-value').text());
+                        scroll.load();
+                    }, 1000);
+                });
+            </pre>
+
+            <br>
+            <br>
+
+            <footer>
+                <p>© Vladimir Neginskiy 2015</p>
+            </footer>
+        </div>
+
+        <script type="text/javascript">
+            //<!--
+
+            jQuery(function() {
+
+                var search = new HeapGoogleSearch(),
+                    callback = function(itm) {
+                        return {
+                            description: '<div class="custom-content"><a href="' + itm.url + '" target="_blank">' +
+                                itm.visibleUrl + '</a><br>' + itm.content + '</div>'
+                        };
+                    },
+                    scroll = new HeapInfiniteScroll('.custom-description-panel', {
+                        margin: 50,
+                        height: 150,
+                        frameWidth: 20,
+                        downloadIcon: '<i class="fa fa-refresh fa-spin"></i>',
+                        url: search,
+                        oncallback: callback,
+                        onframeshow: function (content) {
+                            var thumb = content.closest('.thumb'),
+                                palet = content.closest('.scroll-pallet'),
+                                custom = content.children('.custom-content');
+
+                            if (content.offset().top + 20 + custom.outerHeight() > palet.offset().top + palet.height()) {
+                                custom.css({
+                                    top: - (thumb.height() + custom.outerHeight() + 20) + 'px',
+                                    width: content.width() + 'px'
+                                })
+                            } else {
+                                custom.css({
+                                    top: '20px',
+                                    width: content.width() + 'px'
+                                })
+                            }
+                        }
+                    });
+
+                $('a[role="menuitem"]').click(function() {
+                    var val = $(this).html();
+
+                    $('#search-value').text(val);
+                    search.setQuery('"' + val + '"');
+
+                    scroll.load();
+                });
+
+                setTimeout(function() {
+                    search.setQuery($('#search-value').text());
+                    scroll.load();
+                }, 1000);
+            });
+
+            //-->
+        </script>
+
+    </body>
+</html>

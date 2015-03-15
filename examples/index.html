@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Heap Infinite Scroll</title>
+
+    <!-- Styles -->
+    <link href="/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Scripts -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Heap Infinite Scroll</h1>
+            <h3>version 1.0.1</h3>
+            <h3>Examples</h3>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h2>Using parameters <span style="color: #bd4c12">size</span> and <span style="color: #bd4c12">compact</span></h2>
+                <p>Parameters <span style="color: #bd4c12">size</span> and <span style="color: #bd4c12">compact</span> define the location method data in the panel. Data can be displayed proportional to the width and height (it is typical for the images), or simply as a square. Parameter thee <span style="color: #bd4c12">size</span> defines a display and has two values: 'proportional' and 'square'. <span style="color: #bd4c12">Compact</span> parameter determines how the layout of the data in the panel. </p>
+                <p><a class="btn btn-default" href="/size-compact.html" role="button">View example »</a></p>
+            </div>
+            <div class="col-md-3">
+                <h2>Custom <span style="color: #bd4c12">frame</span></h2><br>
+                <p>Frame for selection of data elements has a standard look and feel. Her appearance, as well as other elements, you can change the settings in css. Additionally, you can manage its mapping using the event "onframeshow". </p>
+                <p><a class="btn btn-default" href="/custom-frame.html" role="button">View example »</a></p>
+            </div>
+            <div class="col-md-3">
+                <h2>Using outside <span style="color: #bd4c12">scrollbar</span></h2>
+                <p>Default scrollbar created in most of the scroll panel. With the parameter <span style="color: #bd4c12">scrollbar</span> you can define the outer container for scrollbar.</p>
+                <p><a class="btn btn-default" href="/out-scrollbar.html" role="button">View example »</a></p>
+            </div>
+            <div class="col-md-3">
+                <h2>Scrolling data in <span style="color: #bd4c12">html</span> format</h2>
+                <p>By default, all data is considered as images and so their attempts scroller display. <span style="color: #bd4c12">isHtml</span> parameter in the returned object for <span style="color: #bd4c12">oncallback</span> events can be made to accept the data as html and the type parameter to specify the content of the <span style="color: #bd4c12">html</span> parametr.</p>
+                <p><a class="btn btn-default" href="/news.html" role="button">View example »</a></p>
+            </div>
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>© Vladimir Neginskiy 2015</p>
+        </footer>
+    </div>
+
+</body>
+</html>
