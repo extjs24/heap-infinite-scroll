@@ -48,7 +48,7 @@ The plugin has the following settings with the default values:
         notFoundMsg: 'Infos not found!',
         noMoreMsg: 'No more infos!',
         downloadIcon: '&#8987;',            // html
-        crollbar: null,
+        scrollbar: null,
         scrollbarVisible: true,
         onclick: null,                      // null | function(item) {...}
         onerror: null,                      // null | function(url) {...}
