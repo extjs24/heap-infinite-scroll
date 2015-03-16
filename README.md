@@ -1,5 +1,6 @@
 # heap-infinite-scroll
 ### version 1.0.1
+### Vladimir Neginskiy
 ## [Examples](http://extjs24.github.io/heap-infinite-scroll/)
 
 ### Installation
@@ -23,5 +24,36 @@ In the style of jQuery:
 Or in the style of Object:
 
     var scroll = new HeapInfiniteScroll('container-selector', {options});
+
+### Options
+
+The plugin has the following settings with the default values:
+
+    {
+        margin: 10,
+        maxImagesPerScroll: 50,
+        maxImages: 200,
+        height: 200,
+        timeout: 2000,
+        frame: true,
+        frameWidth: 'auto',                 // 'auto' | numeric
+        size: 'proportional',               // 'proportional' | 'square'
+        compact: true,
+        url: null,                          // null | string | function(load) {... load(items)}
+        autoload: false,
+        urlField: 'url',
+        descriptionField: 'description',
+        htmlField: 'html',
+        oncallback: null,                   // null | function(item) {... return params;}
+        continueMsg: '+ View more?',
+        notFoundMsg: 'Infos not found!',
+        noMoreMsg: 'No more infos!',
+        downloadIcon: '&#8987;',            // html
+        crollbar: null,
+        scrollbarVisible: true,
+        onclick: null,                      // null | function(item) {...}
+        onerror: null,                      // null | function(url) {...}
+        onframeshow: null                   // null | function(content) {...}
+    }
 
 description made later
