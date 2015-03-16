@@ -20,7 +20,7 @@ In the style of jQuery:
 
     var scroll = $('container-selector').heapInfiniteScroll({options});
 
-Or in the style of javascript:
+Or in the style of Object:
 
     var scroll = new HeapInfiniteScroll('container-selector', {options});
 
