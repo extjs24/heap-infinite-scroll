@@ -57,4 +57,27 @@ The plugin has the following settings with the default values:
 
 #### Parameter Url
 
+URL parameter indicates the source of a list of items displayed and can be a string or a function.
+
+    {
+        ...,
+        url: 'http://foo.com... ',
+        ...
+    }
+    
+As the function it must be in the form:
+
+    {
+        ...,
+        url: function(callback) {
+            ...
+            // loading items
+            ...
+            callback(items)
+        },
+        ...
+    }
+
+Url- function parameter is callback- function which it is necessary to pass an array of loaded items
+
 description made later
