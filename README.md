@@ -103,7 +103,21 @@ It is such an object is HeapGoogleSearch ([Examples](http://extjs24.github.io/he
 
 #### Event oncallback
 
-Loaded with a list of items iterated through and displayed.
+Loaded with a list of items iterated through and displayed. 
+If each item is a string, it is regarded as the image address.
+If you need additional conversion item, it is necessary to use an event onchallbask, 
+which is the parameter item. 
+Event should return an object with the necessary parameters to display:
+
+    var scroll = new HeapInfiniteScroll('container-selector', {
+            ...,
+            oncallback: function(item) {
+                return {
+                    description: item.content
+                };
+            },
+            ...
+        });
 
 
 
