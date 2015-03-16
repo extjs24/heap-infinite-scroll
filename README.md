@@ -31,8 +31,7 @@ The plugin has the following settings with the default values:
 
     {
         margin: 10,
-        maxImagesPerScroll: 50,
-        maxImages: 200,
+        maxCount: 200,
         height: 200,
         timeout: 2000,
         frame: true,
