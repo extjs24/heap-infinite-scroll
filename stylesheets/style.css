@@ -45,6 +45,8 @@ input {
 
 .panel-body .image-panel .wrapper img {
     height: 500px;
+    margin: 0;
+    padding: 0;
 }
 
 .panel-body .image-panel .wrapper div.description {
