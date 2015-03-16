@@ -78,6 +78,27 @@ As the function it must be in the form:
         ...
     }
 
-Url- function parameter is callback- function which it is necessary to pass an array of loaded items
+Url- function has a parameter is callback- function which it is necessary to pass an array of loaded items
+
+Furthermore, an URL can be an object that already has an interface function with the name execute:
+
+    var obj = {
+        execute: function(callback) {
+                ...
+                // loading items
+                ...
+                callback(items)
+            }
+        };
+        
+    var scroll = new HeapInfiniteScroll('container-selector', {
+            ...,
+            url: obj,
+            ...
+        });
+        
+It is such an object is HeapGoogleSearch
+
+    var search = new HeapGoogleSearch();
 
 description made later
