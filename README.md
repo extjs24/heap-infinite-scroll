@@ -101,4 +101,10 @@ It is such an object is HeapGoogleSearch ([Examples](http://extjs24.github.io/he
 
     var search = new HeapGoogleSearch();
 
+#### Event oncallback
+
+Loaded with a list of items iterated through and displayed.
+
+
+
 description made later
