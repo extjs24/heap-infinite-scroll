@@ -97,7 +97,7 @@ Furthermore, an URL can be an object that already has an interface function with
             ...
         });
         
-It is such an object is HeapGoogleSearch
+It is such an object is HeapGoogleSearch ([Examples](http://extjs24.github.io/heap-infinite-scroll/))
 
     var search = new HeapGoogleSearch();
 
