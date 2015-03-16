@@ -22,6 +22,7 @@
     <title>Heap-infinite-scroll</title>
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="javascripts/jquery.heap-infinite-scroll-1.0.1.min.js"></script>
   </head>
 
@@ -45,10 +46,9 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <div class="container" style="max-width: 640px;">
-            <h4>An example of a scroll with different parameter values <span style="color: #bd4c12">size</span> and <span style="color: #bd4c12">compact</span></h4>
-            <br>
+          <h4>An example of a scroll with different parameter values <span style="color: #bd4c12">size</span> and <span style="color: #bd4c12">compact</span></h4>
 
+          <div class="container" style="max-width: 640px;">
             <div class="row">
                 <form class="navbar-form navbar-left">
                     <div class="form-group">
@@ -84,6 +84,70 @@
                 </div>
             </div>
         </div>
+
+          <br>
+
+          <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#code"><span class="caret"></span> Code</button>
+          <pre id="code" class=" collapse">
+          jQuery(function() {
+
+            var search1 = new HeapGoogleSearch(),
+                search2 = new HeapGoogleSearch(),
+                search3 = new HeapGoogleSearch(),
+                search4 = new HeapGoogleSearch(),
+                btnClick = function() {
+                    var val = $('#search-word').val();
+
+                    search1.setQuery(val);
+                    search2.setQuery(val);
+                    search3.setQuery(val);
+                    search4.setQuery(val);
+
+                    scroll1.load();
+                    scroll2.load();
+                    scroll3.load();
+                    scroll4.load();
+                },
+                scroll1 = new HeapInfiniteScroll('.proportional-compact-panel', {
+                    margin: 10,
+                    height: 80,
+                    frameWidth: 0,
+                    downloadIcon: '&lt;i class="fa fa-refresh fa-spin"&gt;&lt;/i&gt;',
+                    url: search1
+                }),
+                scroll2 = new HeapInfiniteScroll('.proportional-uncompact-panel', {
+                    margin: 10,
+                    height: 80,
+                    frameWidth: 0,
+                    compact: false,
+                    downloadIcon: '&lt;i class="fa fa-cog fa-spin"&gt;&lt;/i&gt;',
+                    url: search2
+                }),
+                scroll3 = new HeapInfiniteScroll('.square-compact-panel', {
+                    margin: 10,
+                    height: 100,
+                    frameWidth: 0,
+                    size: 'square',
+                    downloadIcon: '&lt;i class="fa fa-spinner fa-spin"&gt;&lt;/i&gt;',
+                    url: search3
+                }),
+                scroll4 = new HeapInfiniteScroll('.square-uncompact-panel', {
+                    margin: 10,
+                    height: 100,
+                    frameWidth: 0,
+                    size: 'square',
+                    compact: false,
+                    downloadIcon: '&lt;i class="fa fa-circle-o-notch fa-spin"&gt;&lt;/i&gt;',
+                    url: search4
+                });
+
+            $('#search-button').click(btnClick);
+
+            setTimeout(function() {
+                btnClick();
+            }, 1000);
+          });
+          </pre>
 
         <hr>
 
