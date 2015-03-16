@@ -1,0 +1,58 @@
+
+.heap-scroll-wrapper .scroll-pallet {
+    background-color: #ffffff;
+}
+
+.heap-scroll-wrapper .thumb .img-wrapper {
+    border-style: none;
+}
+
+.heap-scroll-wrapper .bottom-panel {
+    padding: 20px;
+}
+
+.heap-scroll-wrapper .continue-msg {
+    text-decoration: none;
+    color: #161616;
+    font-weight: bold;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 1.42857143;
+}
+
+.heap-scroll-wrapper .scroll-description {
+    background-color: #0b5775;
+}
+
+.heap-scroll-wrapper .description-content {
+    color: #e2e2e2;
+    padding: 10px;
+    font-size: 12px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+    line-height: 1.42857143;
+}
+
+.heap-scroll-wrapper .description-content a {
+    color: #eaa254;
+}
+
+.heap-scroll-wrapper .scroll-description.description-dimension {
+    color: #ffffff;
+    background-color: #0b3b52;
+    opacity: .7;
+}
+
+.heap-scroll-wrapper .description-shadow {
+    -webkit-box-shadow: 0px 1px 14px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 14px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 14px 1px rgba(0,0,0,0.75);
+}
+
+.heap-scroll-wrapper .scroll-download {
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    color: #000000;
+    font-size: 24px;
+    font-weight: bold;
+    bottom: 25px;
+    right: 25px;
+}
