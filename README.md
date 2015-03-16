@@ -55,4 +55,6 @@ The plugin has the following settings with the default values:
         onframeshow: null                   // null | function(content) {...}
     }
 
+#### Parameter Url
+
 description made later
