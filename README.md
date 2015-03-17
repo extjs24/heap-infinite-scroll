@@ -258,6 +258,8 @@ It has the following methods:
 + HeapGoogleSearch.complete(handlers) - captures the handlers at the event get search results
 
 
+
+
     var search = new HeapGoogleSearch(NewHeapGoogleSearch.NEWS),
         handler = function(result) {
             console.log(result);
