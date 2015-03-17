@@ -139,5 +139,37 @@ Returns the parameters for the images, if they are not present in the item or th
         });
 
 
+If these parameters are already in the cell, but under a different name, you can simply specify the appropriate values in the parameters:
+
+    var scroll = new HeapInfiniteScroll('container-selector', {
+            ...,
+            urlField: 'src',
+            descriptionField: 'declaration'
+            ...
+        });
+        
+If the item is no 'urlField' field or for him the flag isHtml = true, then the element is not considered an image, 
+and is accepted as html item. Then it is necessary to specify the contents of the 'html' field. You can also set the width of an html- item ([Example](http://extjs24.github.io/heap-infinite-scroll/news.html)):
+
+    var scroll = new HeapInfiniteScroll('container-selector', {
+            ...,
+            oncallback: function(item) {
+                return {
+                    isHtml: true,
+                    description: '....',
+                    html: '.....',
+                    width: Math.random()*100 + 100
+                };
+            },
+            ...
+        });
+
+If you already have html content, but in a different field, then you can simply specify the appropriate value in the htmlField parameter:
+
+    var scroll = new HeapInfiniteScroll('container-selector', {
+            ...,
+            htmlField: 'content',
+            ...
+        });
 
 description made later
