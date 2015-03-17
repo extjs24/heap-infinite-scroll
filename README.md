@@ -172,4 +172,17 @@ If you already have html content, but in a different field, then you can simply 
             ...
         });
 
+#### Other options
+
++ margin - the distance between the items,
++ maxCount - the maximum count of items in the cache,
++ height - the height of the display items,
++ timeout - time after which will be stopped loading images,
++ frame - the presence of the selection frame,
++ frameWidth - stroke width of the frame (default 'auto'),
++ size - ('proportional' | 'square') determines how the items ([Example](http://http://extjs24.github.io/heap-infinite-scroll/size-compact.html))
++ compact - (tru | false) determines compactness of the items ([Example](http://http://extjs24.github.io/heap-infinite-scroll/size-compact.html))
++ autoload - autoload data immediately after the creation of the component,
++ 
+
 description made later
