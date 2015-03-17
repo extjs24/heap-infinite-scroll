@@ -267,6 +267,6 @@ HeapGoogleSearch.complete(handlers) - captures the handlers at the event get sea
         };
         
     search.complete(handler);
-    search..setQuery('art');
+    search.setQuery('art');
     search.execute();
 
