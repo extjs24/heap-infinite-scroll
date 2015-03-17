@@ -1,4 +1,5 @@
 # heap-infinite-scroll
+### plugin for jQuery (1.11.2 or later)
 ### version 1.0.1
 ### Vladimir Neginskiy
 ## [Examples](http://extjs24.github.io/heap-infinite-scroll/)
