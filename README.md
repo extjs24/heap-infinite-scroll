@@ -256,8 +256,7 @@ It has the following methods:
 - HeapGoogleSearch.execute([callback]) - triggers the start of the search results will be transferred callback- function,
 - HeapGoogleSearch.setQuery(query) - defines the search string value query,
 - HeapGoogleSearch.complete(handlers) - captures the handlers at the event get search results.
-
-
+###
     var search = new HeapGoogleSearch(NewHeapGoogleSearch.NEWS),
         handler = function(result) {
             console.log(result);
