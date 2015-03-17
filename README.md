@@ -262,9 +262,8 @@ It has the following methods:
         handler = function(result) {
             console.log(result);
         };
-    
+        
     search.complete(handler);
     search..setQuery('art');
-    
     search.execute();
 
