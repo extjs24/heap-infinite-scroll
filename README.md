@@ -188,6 +188,7 @@ If you already have html content, but in a different field, then you can simply 
 + noMoreMsg - defines a text message if the information is available on request to the server was, and then at the same address ceased
 + downloadIcon - (default hourglass symbol) html icons download data,
 + scrollbar - defines a selector container scrollbars (default in the component) ([Example](http://extjs24.github.io/heap-infinite-scroll/out-scrollbar.html))
-+ scrollbarVisible - determines whether the scroll bar
-
-description made later
++ scrollbarVisible - determines whether the scroll bar,
++ onclick - event item click. Parameter - item,
++ onerror - error event. Parametr - error message,
++ onframeshow - show frame for the item. Parameter - content (jQuery object for the description) ([Example](http://extjs24.github.io/heap-infinite-scroll/custom-frame.html))
