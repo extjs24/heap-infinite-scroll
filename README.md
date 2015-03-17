@@ -130,6 +130,7 @@ Returns the parameters for the images, if they are not present in the item or th
 * url - image address,
 * description - description of the item for the selection frame
 
+
     var scroll = new HeapInfiniteScroll('container-selector', {
             ...,
             oncallback: function(item) {
