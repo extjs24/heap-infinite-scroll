@@ -260,6 +260,10 @@ HeapGoogleSearch.complete(handlers) - captures the handlers at the event get sea
     var search = new HeapGoogleSearch(NewHeapGoogleSearch.NEWS),
         handler = function(result) {
             console.log(result);
+            
+            if (result.length) {
+                search.execute();
+            }
         };
         
     search.complete(handler);
