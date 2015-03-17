@@ -233,4 +233,38 @@ HeapInfiniteScroll.draw - draw component, if no options are specified when creat
     scroll.draw('container-selector', options);
     
 
+### Component HeapGoogleSearch
+
+Added to the library component, allows you to search using Google Search.
+
+    var search = new HeapGoogleSearch([type of search], [options]);
+    
+Identified the following types of search:
+
+    NewHeapGoogleSearch.IMAGES; // - default value
+    NewHeapGoogleSearch.WEB;
+    NewHeapGoogleSearch.VIDEO;
+    NewHeapGoogleSearch.BLOGS;
+    NewHeapGoogleSearch.NEWS;
+    NewHeapGoogleSearch.BOOKS;
+    NewHeapGoogleSearch.PATENT;
+    
+Parameter options - options that might be present in the search query (Google Search API)
+
+It has the following methods:
+
++ HeapGoogleSearch.execute([callback]) - triggers the start of the search results will be transferred callback- function,
++ HeapGoogleSearch.setQuery(query) - defines the search string value query,
++ HeapGoogleSearch.complete(handlers) - captures the handlers at the event get search results
+
+
+    var search = new HeapGoogleSearch(NewHeapGoogleSearch.NEWS),
+        handler = function(result) {
+            console.log(result);
+        };
+    
+    search.complete(handler);
+    search..setQuery('art');
+    
+    search.execute();
 
