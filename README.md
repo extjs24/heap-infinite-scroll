@@ -242,13 +242,13 @@ Added to the library component, allows you to search using Google Search.
     
 Identified the following types of search:
 
-    NewHeapGoogleSearch.IMAGES; // - default value
-    NewHeapGoogleSearch.WEB;
-    NewHeapGoogleSearch.VIDEO;
-    NewHeapGoogleSearch.BLOGS;
-    NewHeapGoogleSearch.NEWS;
-    NewHeapGoogleSearch.BOOKS;
-    NewHeapGoogleSearch.PATENT;
+    HeapGoogleSearch.IMAGES; // - default value
+    HeapGoogleSearch.WEB;
+    HeapGoogleSearch.VIDEO;
+    HeapGoogleSearch.BLOGS;
+    HeapGoogleSearch.NEWS;
+    HeapGoogleSearch.BOOKS;
+    HeapGoogleSearch.PATENT;
     
 Parameter options - options that might be present in the search query (Google Search API)
 
