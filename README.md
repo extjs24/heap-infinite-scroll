@@ -193,5 +193,16 @@ If you already have html content, but in a different field, then you can simply 
 + onerror - error event. Parametr - error message,
 + onframeshow - show frame for the item. Parameter - content (jQuery object for the description) ([Example](http://extjs24.github.io/heap-infinite-scroll/custom-frame.html))
  
+
 #### HeapInfiniteScroll - methods
+
+HeapInfiniteScroll.add - add images or html elements:
+
+    var scroll = new HeapInfiniteScroll('container-selector', {
+            ...
+        }),
+        items = ['http://foo.com/image1.png', 'http://foo.com/image2.png', ...];
+    
+    scroll.add(items);
+
 
