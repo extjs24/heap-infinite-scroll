@@ -192,3 +192,6 @@ If you already have html content, but in a different field, then you can simply 
 + onclick - event item click. Parameter - item,
 + onerror - error event. Parametr - error message,
 + onframeshow - show frame for the item. Parameter - content (jQuery object for the description) ([Example](http://extjs24.github.io/heap-infinite-scroll/custom-frame.html))
+ 
+#### HeapInfiniteScroll - methods
+
