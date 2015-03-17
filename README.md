@@ -205,4 +205,31 @@ HeapInfiniteScroll.add - add images or html elements:
     
     scroll.add(items);
 
+HeapInfiniteScroll.clear - remove all images or html elements:
+
+    var scroll = new HeapInfiniteScroll('container-selector', {
+            ...
+        });
+    ...
+    
+    scroll.clear();
+
+HeapInfiniteScroll.load - load images or html elements from server:
+
+    var scroll = new HeapInfiniteScroll('container-selector', {
+            ...
+        }),
+        url = 'http://foo.com/images';
+    ...
+    
+    scroll.load(url); // or scroll.load() if the url is already set in the options
+    
+HeapInfiniteScroll.draw - draw component, if no options are specified when creating
+
+    var scroll = new HeapInfiniteScroll()
+    ...
+    
+    scroll.draw('container-selector', options);
+    
+
 
