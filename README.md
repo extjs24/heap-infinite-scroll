@@ -127,15 +127,12 @@ Event should return an object with the necessary parameters to display:
 
 Returns the parameters for the images, if they are not present in the item or they have to be converted must be:
 
-url - image address,
-description - description of the item for the selection frame
-
     var scroll = new HeapInfiniteScroll('container-selector', {
             ...,
             oncallback: function(item) {
                 return {
-                    url: 'http://foo.com/image.png',
-                    description: item.content
+                    url: 'http://foo.com/image.png', // image address
+                    description: item.content        // description of the item for the selection frame
                 };
             },
             ...
