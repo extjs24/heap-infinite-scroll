@@ -125,6 +125,11 @@ Event should return an object with the necessary parameters to display:
             ...
         });
 
+Returns the parameters for the images, if they are not present in the item or they have to be converted must be:
+
++ url - image address,
++ description - description of the item for the selection frame
++ 
 
 
 description made later
