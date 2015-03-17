@@ -180,9 +180,14 @@ If you already have html content, but in a different field, then you can simply 
 + timeout - time after which will be stopped loading images,
 + frame - the presence of the selection frame,
 + frameWidth - stroke width of the frame (default 'auto'),
-+ size - ('proportional' | 'square') determines how the items ([Example](http://http://extjs24.github.io/heap-infinite-scroll/size-compact.html))
-+ compact - (tru | false) determines compactness of the items ([Example](http://http://extjs24.github.io/heap-infinite-scroll/size-compact.html))
++ size - ('proportional' | 'square') determines how the items ([Example](http://extjs24.github.io/heap-infinite-scroll/size-compact.html))
++ compact - (tru | false) determines compactness of the items ([Example](http://extjs24.github.io/heap-infinite-scroll/size-compact.html))
 + autoload - autoload data immediately after the creation of the component,
-+ 
++ continueMsg - defines a text message when the maxCount number of items,
++ notFoundMsg - defines a text message if there is no information available on request to the server,
++ noMoreMsg - defines a text message if the information is available on request to the server was, and then at the same address ceased
++ downloadIcon - (default hourglass symbol) html icons download data,
++ scrollbar - defines a selector container scrollbars (default in the component) ([Example](http://extjs24.github.io/heap-infinite-scroll/out-scrollbar.html))
++ scrollbarVisible - determines whether the scroll bar
 
 description made later
